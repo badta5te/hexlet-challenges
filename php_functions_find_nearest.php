@@ -16,7 +16,6 @@ function findIndexOfNearest($array, $value)
         if (abs($value) - abs($number) < $minimalValue) {
             $result[0] = [$index => $number];
             $minimalValue = $number;
-            print_r($result);
         }
     }
     return key($result[0]);
