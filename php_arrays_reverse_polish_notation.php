@@ -3,25 +3,22 @@
 function calcInPolishNotation($expression)
 {
     $stack = [];
-    function sum($a, $b)
-    {
+    
+    $sum = function ($a, $b) {
         return $a + $b;
-    }
-
-    function subtraction($a, $b)
-    {
+    };
+    
+    $sub = function ($a, $b) {
         return $a - $b;
-    }
+    };
 
-    function multiplication($a, $b)
-    {
+    $multiplication = function ($a, $b) {
         return $a * $b;
-    }
+    };
 
-    function division($a, $b)
-    {
+    $division = function ($a, $b) {
         return $a / $b;
-    }
+    };
 
     foreach ($expression as $char) {
         if (is_int($char)) {
@@ -29,23 +26,19 @@ function calcInPolishNotation($expression)
         } elseif ($char === '+') {
             $b = array_pop($stack);
             $a = array_pop($stack);
-            $sum = sum($a, $b);
-            $stack[] = $sum;
+            $stack[] = $sum($a, $b);
         } elseif ($char === '-') {
             $b = array_pop($stack);
             $a = array_pop($stack);
-            $sub = subtraction($a, $b);
-            $stack[] = $sub;
+            $stack[] = $sub($a, $b);
         } elseif ($char === '*') {
             $b = array_pop($stack);
             $a = array_pop($stack);
-            $multiplication = multiplication($a, $b);
-            $stack[] = $multiplication;
+            $stack[] = $multiplication($a, $b);
         } elseif ($char === '/') {
             $b = array_pop($stack);
             $a = array_pop($stack);
-            $division = division($a, $b);
-            $stack[] = $division;
+            $stack[] = $division($a, $b);
         }
     }
     return $stack[0];
