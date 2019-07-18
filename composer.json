@@ -1,0 +1,18 @@
+{
+    "name": "pavelmikhaylov/hexlet-challenges",
+    "description": "additional practice from hexlet.io",
+    "type": "project",
+    "require": {
+        "nesbot/carbon": "^2.21",
+        "tightenco/collect": "^5.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.2"
+    },
+    "authors": [
+        {
+            "name": "Pavel",
+            "email": "mikhailov.sztu@gmail.com"
+        }
+    ]
+}
